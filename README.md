@@ -9,6 +9,16 @@ The project is composed by three modules:
 
 See the README for each module. Start at contract, then go to server, and finally go to the client.
 
+----
+## Functionality
+The functionality was ****fully**** implemented
+To compile and run each module (`server` and `client`) run ```mvn clean compile exec:java``` in the corresponding folder.
+Example:
+```
+cd server; mvn clean compile exec:java
+cd client; mvn clean compile exec:java
+```
+
 
 ----
 
