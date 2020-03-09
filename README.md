@@ -14,17 +14,14 @@ See the README for each module. Start at contract, then go to server, and finall
 
 ## Authors
 
-**Group ...**
+**Group A22**
 
-*(fill-in line above with group identifier e.g. A07 or T22; and then delete this line)*
+58524 [João Filipe Pereira Sousa](mailto:joao.sousa@tecnico.ulisboa.pt)
 
-... [...](mailto:...@tecnico.ulisboa.pt)
+89475 [João Miguel Do Ó Matos Soares](mailto:joao.m.soares@tecnico.ulisboa.pt)
 
-... [...](mailto:...@tecnico.ulisboa.pt)
+89479 [João Pedro Borges Lopes](mailto:joaopedrolopes@tecnico.ulisboa.pt)
 
-... [...](mailto:...@tecnico.ulisboa.pt)
-
-*(fill-in lines above with student number, name, and email; and then delete this line)*
 
 ----
 

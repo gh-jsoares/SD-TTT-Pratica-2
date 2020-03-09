@@ -8,6 +8,9 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import pt.ulisboa.tecnico.distsys.ttt.contract.PlayRequest;
+import pt.ulisboa.tecnico.distsys.ttt.contract.PlayResult;
+
 /**
  * Root resource (exposed at "game" path)
  */
@@ -50,5 +53,49 @@ public class TTTResources {
     }
     
     
-    /* TODO: checkwinner, play */
+    /**
+     * Method handling HTTP GET requests. The returned object will be sent
+     * to the client as "text/plain" media type.
+     *
+     * @return Integer representing the winner that will be returned as a text/plain response.
+     */ 
+    @GET
+    @Path("board/checkwinner")
+    @Produces(MediaType.TEXT_PLAIN)
+    public int checkWinner() {
+        return game.checkWinner();
+    }
+    
+    
+    /**
+     * Method handling HTTP POST requests. The returned object will be sent
+     * to the client as "json" media type.
+     * 
+     * @param PlayRequest as a XML param
+     * @return PlayResult object that will be returned as a json response.
+     */ 
+    @POST
+    @Path("play")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public PlayResult play(PlayRequest request) {
+    	return game.play(request.getRow(), request.getColumn(), request.getPlayer());
+    }
+    
+
+    /**
+     * Method handling HTTP GET requests. The returned object will be sent
+     * to the client as "json" media type.
+     * 
+     * @param row as int
+     * @param column as int
+     * @param player id as int
+     * @return PlayResult object that will be returned as a json response.
+     */ 
+    @GET
+    @Path("play/{row}/{col}/{pid}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public PlayResult play(@PathParam("row") int row, @PathParam("col") int col, @PathParam("pid") int pid) {
+    	return game.play(row, col, pid);
+    }
 }
