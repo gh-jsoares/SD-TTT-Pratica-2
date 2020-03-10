@@ -101,7 +101,7 @@ public class TTTResources {
     
     private PlayResult checkPlay(int row, int col, int pid) {
 		/*
-		 * 
+		 * If you want to reset when you perform a request to the server with the play, uncomment this line. (it helps support the browser playing)
 		 * if(game.checkWinner() != -1) game.resetBoard();
 		 */
     	return game.play(row, col, pid);
