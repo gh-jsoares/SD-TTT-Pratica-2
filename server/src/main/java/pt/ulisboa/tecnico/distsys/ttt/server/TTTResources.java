@@ -79,7 +79,7 @@ public class TTTResources {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public PlayResult play(PlayRequest request) {
-    	return game.play(request.getRow(), request.getColumn(), request.getPlayer());
+    	return this.checkLimpar(request.getRow(), request.getColumn(), request.getPlayer());
     }
     
 
@@ -96,6 +96,12 @@ public class TTTResources {
     @Path("play/{row}/{col}/{pid}")
     @Produces(MediaType.APPLICATION_JSON)
     public PlayResult play(@PathParam("row") int row, @PathParam("col") int col, @PathParam("pid") int pid) {
+    	return this.checkLimpar(row, col, pid);
+    }
+    
+    private PlayResult checkLimpar(int row, int col, int pid) {
+//    	if(game.checkWinner() != -1)
+//    		game.resetBoard();
     	return game.play(row, col, pid);
     }
 }

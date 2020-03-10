@@ -42,9 +42,6 @@ public class TTTPlayer {
     private static void playGame(String restURL) {
     	
     	Client client = ClientBuilder.newClient();
-    	
-    	/* Reset board to play a new game */
-    	//client.target(restURL).path("board").path("reset").request().get(String.class);
 
         int player = 0;                              /* Player number - 0 or 1               */
         int go = 0;                                  /* Square selection number for turn     */
@@ -52,6 +49,14 @@ public class TTTPlayer {
         int column = 0;                              /* Column index for a square            */
         int winner = -1;                             /* The winning player                   */
         PlayResult play_res;
+    	
+    	/* Reset board to play a new game */
+        winner = client.target(restURL).path("board/checkwinner").request().get(Integer.class);
+        if(winner != -1) {
+            System.out.println("Last game already finished.");
+        	client.target(restURL).path("board").path("reset").request().get(String.class);
+        	System.out.println("Resetting board...");
+        }
 
         /* The main game loop. The game continues for up to 9 turns */
         /* As long as there is no winner                            */

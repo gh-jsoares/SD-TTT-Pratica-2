@@ -38,7 +38,7 @@ public class TTTGame {
 		        /* No more plays left */
                 return PlayResult.GAME_FINISHED;
 		    }
-	
+		    
 		    board[row][column] = (player == 1) ? 'X' : 'O';  /* Insert player symbol */
 		    nextPlayer = (nextPlayer + 1) % 2;
 		    numPlays++;
@@ -101,6 +101,9 @@ public class TTTGame {
 			{'4', '5', '6'},
 			{'7', '8', '9'}
 		};
+		
+		nextPlayer = 0;
+		numPlays = 0;
 	}
 	
 }

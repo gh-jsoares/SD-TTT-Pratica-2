@@ -11,7 +11,12 @@ See the README for each module. Start at contract, then go to server, and finall
 
 ----
 ## Functionality
-The functionality was ****fully**** implemented
+The functionality was ****fully**** implemented.
+You must first install the `contract` module by using the following command:
+```
+cd contract; mvn clean install; cd ..
+```
+
 To compile and run each module (`server` and `client`) run ```mvn clean compile exec:java``` in the corresponding folder.
 Example:
 ```
