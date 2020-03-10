@@ -94,12 +94,14 @@ public class TTTPlayer {
                 play_res = client.target(restURL).path(playString).request().get(PlayResult.class);
                 
                 if (play_res != PlayResult.SUCCESS) {
+                	if (play_res == PlayResult.WRONG_TURN)
+                		player = (player + 1) % 2;  
                     displayResult(play_res);
                 }
             } while(play_res != PlayResult.SUCCESS);
 
             winner = client.target(restURL).path("board/checkwinner").request().get(Integer.class);
-            player = (player+1)%2;                           /* Select player */
+            player = (player + 1) % 2;                           /* Select player */
 
             System.out.println("player " + player);
 
