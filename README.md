@@ -11,7 +11,10 @@ See the README for each module. Start at contract, then go to server, and finall
 
 ----
 ## Functionality
-The functionality was ****fully**** implemented.
+The functionality was ****fully**** implemented:
+When the client connects to the server, it sends a request to check if the previous game has finished. If so, it will send another request to reset the board, if not, it will just continue playing the previous game.
+
+
 You must first install the `contract` module by using the following command:
 ```
 cd contract; mvn clean install; cd ..
